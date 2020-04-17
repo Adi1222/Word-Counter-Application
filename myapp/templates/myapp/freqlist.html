@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordApp</title>
+</head>
+<body>
+    {% if old %}
+        <h1>{{ old }}</h1>
+        <p>{{ old_url }}</p>
+        <l1>{{old_word_count}}</l1>
+    {% else %}
+        <h1>{{ new_data }}</h1>
+        {% for word, count in word_count.items %}
+        <l1>{{word}} -> {{count}}</l1>
+        <br>
+        {% endfor %}
+    {% endif %}
+    <form action="/frequency" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Go Back to homepage">
+    </form>
+</body>
+</html>

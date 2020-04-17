@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>word App</title>
+</head>
+<body>
+    <h2>Home Page</h2>
+    <form action="/result" method="post">
+        {% csrf_token %}
+        <label for="inputurl">Enter URL:</label>
+        <input type="text" id="inputurl" name="inputurl" >
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
